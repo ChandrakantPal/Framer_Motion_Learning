@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
+import Pizza from '../types'
 
 interface ToppingsProp {
-  addTopping: any
-  pizza: any
+  addTopping: (toppings: string) => void
+  pizza: Pizza
 }
 
 const Toppings: FC<ToppingsProp> = ({ addTopping, pizza }) => {

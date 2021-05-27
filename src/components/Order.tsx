@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
+import Pizza from '../types'
 
 interface OderProp {
-  pizza: any
+  pizza: Pizza
 }
 
 const Order: FC<OderProp> = ({ pizza }) => {

@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
+import Pizza from '../types'
 
 interface BaseProp {
   addBase: (base: any) => void
-  pizza: any
+  pizza: Pizza
 }
 
 const Base: FC<BaseProp> = ({ addBase, pizza }) => {

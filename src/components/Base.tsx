@@ -30,6 +30,7 @@ const Base: FC<BaseProp> = ({ addBase, pizza }) => {
           className="next"
           initial={{ x: '-100vw' }}
           animate={{ x: 0 }}
+          transition={{ type: 'spring', stiffness: 120 }}
         >
           <Link to="/toppings">
             <button>Next</button>

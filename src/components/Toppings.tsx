@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import Pizza from '../types'
+import { motion } from 'framer-motion'
 
 interface ToppingsProp {
   addTopping: (toppings: string) => void
@@ -32,7 +33,15 @@ const Toppings: FC<ToppingsProp> = ({ addTopping, pizza }) => {
       </ul>
 
       <Link to="/order">
-        <button>Order</button>
+        <motion.button
+          whileHover={{
+            scale: 1.1,
+            textShadow: '0px 0px 8px rgb(255,255,255)',
+            boxShadow: '0px 0px 8px rgb(255,255,255)',
+          }}
+        >
+          Order
+        </motion.button>
       </Link>
     </div>
   )

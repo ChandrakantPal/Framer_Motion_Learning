@@ -2,10 +2,20 @@ import { motion } from 'framer-motion'
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import Pizza from '../types'
-
 interface BaseProp {
   addBase: (base: any) => void
   pizza: Pizza
+}
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
 }
 
 const Base: FC<BaseProp> = ({ addBase, pizza }) => {
@@ -14,8 +24,9 @@ const Base: FC<BaseProp> = ({ addBase, pizza }) => {
   return (
     <motion.div
       className="base container"
-      initial={{ x: '100vw' }}
-      animate={{ x: 0 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       transition={{ type: 'spring', delay: 0.5 }}
     >
       <h3>Step 1: Choose Your Base</h3>

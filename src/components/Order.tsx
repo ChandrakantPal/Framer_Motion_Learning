@@ -16,7 +16,6 @@ const containerVariants = {
     x: 0,
     transition: {
       type: 'spring',
-      delay: 0.5,
       when: 'beforeChildren',
     },
   },

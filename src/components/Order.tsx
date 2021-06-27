@@ -17,7 +17,17 @@ const containerVariants = {
     transition: {
       type: 'spring',
       delay: 0.5,
+      when: 'beforeChildren',
     },
+  },
+}
+
+const childVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
   },
 }
 
@@ -30,10 +40,14 @@ const Order: FC<OderProp> = ({ pizza }) => {
       className="container order"
     >
       <h2>Thank you for your order :)</h2>
-      <p>You ordered a {pizza.base} pizza with:</p>
-      {pizza.toppings.map((topping: any) => (
-        <div key={topping}>{topping}</div>
-      ))}
+      <motion.p variants={childVariants}>
+        You ordered a {pizza.base} pizza with:
+      </motion.p>
+      <motion.div variants={childVariants}>
+        {pizza.toppings.map((topping: any) => (
+          <div key={topping}>{topping}</div>
+        ))}
+      </motion.div>
     </motion.div>
   )
 }

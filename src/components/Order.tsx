@@ -1,19 +1,40 @@
 import React, { FC } from 'react'
 import Pizza from '../types'
+import { motion } from 'framer-motion'
 
 interface OderProp {
   pizza: Pizza
 }
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      delay: 0.5,
+    },
+  },
+}
+
 const Order: FC<OderProp> = ({ pizza }) => {
   return (
-    <div className="container order">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="container order"
+    >
       <h2>Thank you for your order :)</h2>
       <p>You ordered a {pizza.base} pizza with:</p>
       {pizza.toppings.map((topping: any) => (
         <div key={topping}>{topping}</div>
       ))}
-    </div>
+    </motion.div>
   )
 }
 

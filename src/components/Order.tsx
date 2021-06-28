@@ -22,6 +22,10 @@ const containerVariants = {
       staggerChildren: 0.4,
     },
   },
+  exit: {
+    x: '-100vh',
+    transition: { ease: 'easeInOut' },
+  },
 }
 
 const childVariants = {
@@ -39,6 +43,7 @@ const Order: FC<OderProp> = ({ pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       className="container order"
     >
       <h2>Thank you for your order :)</h2>

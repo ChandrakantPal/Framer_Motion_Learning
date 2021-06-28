@@ -21,6 +21,10 @@ const containerVariants = {
       delay: 0.5,
     },
   },
+  exit: {
+    x: '-100vh',
+    transition: { ease: 'easeInOut' },
+  },
 }
 
 const buttonVariants = {
@@ -50,6 +54,7 @@ const Toppings: FC<ToppingsProp> = ({ addTopping, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       className="toppings container"
     >
       <h3>Step 2: Choose Toppings</h3>

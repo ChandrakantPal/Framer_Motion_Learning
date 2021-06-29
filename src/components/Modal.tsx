@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 interface ModalProp {
   showModal: boolean
+  setShowModal: Function
 }
 
 const backdrop = {
@@ -11,7 +12,7 @@ const backdrop = {
   hidden: { opacity: 0 },
 }
 
-const Modal: FC<ModalProp> = ({ showModal }) => {
+const Modal: FC<ModalProp> = ({ showModal, setShowModal }) => {
   return (
     <AnimatePresence exitBeforeEnter>
       {showModal && (

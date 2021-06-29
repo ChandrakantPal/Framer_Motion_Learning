@@ -1,9 +1,10 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import Pizza from '../types'
 import { motion } from 'framer-motion'
 
 interface OderProp {
   pizza: Pizza
+  setShowModal: Function
 }
 
 const containerVariants = {
@@ -37,7 +38,12 @@ const childVariants = {
   },
 }
 
-const Order: FC<OderProp> = ({ pizza }) => {
+const Order: FC<OderProp> = ({ pizza, setShowModal }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true)
+    }, 5000)
+  }, [setShowModal])
   return (
     <motion.div
       variants={containerVariants}

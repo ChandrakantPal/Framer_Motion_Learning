@@ -11,6 +11,7 @@ import Pizza from './types'
 
 function App() {
   const [pizza, setPizza] = useState<Pizza>({ base: '', toppings: [] })
+  const [showModal, setShowModal] = useState(false)
 
   const location = useLocation()
 

@@ -13,6 +13,21 @@ const svgVariants = {
   },
 }
 
+const pathVariants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 2,
+      ease: 'easeInOut',
+    },
+  },
+}
+
 const Header = () => {
   return (
     <header>
@@ -25,11 +40,16 @@ const Header = () => {
           initial="hidden"
           animate="visible"
         >
-          <path
+          <motion.path
+            variants={pathVariants}
             fill="none"
             d="M40 40 L80 40 C80 40 80 80 40 80 C40 80 0 80 0 40 C0 40 0 0 40 0Z"
           />
-          <path fill="none" d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z" />
+          <motion.path
+            variants={pathVariants}
+            fill="none"
+            d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z"
+          />
         </motion.svg>
       </div>
       <motion.div

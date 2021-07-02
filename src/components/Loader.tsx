@@ -13,6 +13,7 @@ const loaderVariants = {
       y: {
         yoyo: Infinity,
         duration: 0.25,
+        ease: 'easeOut',
       },
     },
   },
